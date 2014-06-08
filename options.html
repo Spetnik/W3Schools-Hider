@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>W3Schools Hider Options</title>
+		<style type="text/css">
+			html{
+				font-family: sans-serif;
+			}
+			body{
+				margin: 24px;
+			}
+			.clear{
+				clear: both;
+			}
+			fieldset{
+				border-radius: 4px;
+				border: 2px solid #ccc;
+				padding: 12px;
+				width: 670px;
+			}
+			button{
+				cursor: pointer;
+				background-color: #fff;
+				border: 2px solid #ccc;
+				padding: 4px;
+				font-weight: bold;
+				color: #777;
+				height: 30px;
+				margin: 0px;
+				padding: 0px 7px;
+				outline-width: 1px;
+				outline-color: #777;
+			}
+			button:hover{
+				background-color: #ccc;
+			}
+			label.left{
+				display: block;
+				width: 160px;
+				font-weight: bold;
+				float: left;
+			}
+			div.right{
+				float: right;
+				width: 490px;
+			}
+			#inpAddSite, #selSites{
+				border: 2px solid #ccc;
+				outline-width: 0px;
+			}
+			#inpAddSite{
+				width: 433px;
+				height: 22px;
+				margin: 0px;
+				border-right-width: 0px;
+				padding: 2px;
+			}
+
+			#selSites{
+				width: 482px;
+			}
+			#btnRemove{
+				margin-left: 352px;
+			}
+			#dvSubmit{
+				text-align: center;
+			}
+			button[type=submit]{
+				font-weight: bold;
+				font-size: 1.2em;
+				margin: 18px 0px 0px 8px;
+			}
+			#dvMessageHolder{
+				height: 20px;
+				margin: 8px 48px;
+			}
+			#dvMessage{
+				display: none;
+				text-align: center;
+			}
+			option[disabled]{
+				color: #a77;
+			}
+			img{
+				vertical-align: middle;
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script type="text/javascript" src="options.js"></script>
+	</head>
+	<body>
+		<h1>
+			<img alt="" src="images/icon128.png" >
+			W3Schools Hider Extension Options
+		</h1>
+		<form id="frmOptions">
+			<fieldset>
+				
+				<div id="dvMessageHolder">
+					<div id="dvMessage"></div>
+				</div>
+
+				<label class="left">Add Domain:</label>
+				<div class="right">
+					<label><input type="radio" name="match" value="exact" id="rdExact" checked>Exact</label>
+					<label><input type="radio" name="match" value="starts" id="rdStarts">Starts with</label>
+					<label><input type="radio" name="match" value="contains" id="rdContains">Contains</label>
+					<label><input type="radio" name="match" value="ends" id="rdEnds">Ends with</label>
+					<input id="inpAddSite"><button type="button" id="btnAdd">Add</button>
+				</div>
+				<div class="clear"></div>
+
+				<label class="left" for="selSites">Blocked Domains:</label>
+				<div class="right">
+					<select id="selSites" size="8" multiple></select>
+					<button id="btnRemove">Remove Selected</button>
+				</div>
+				<div class="clear"></div>
+			</fieldset>
+		</form>
+	</body>
+</html>

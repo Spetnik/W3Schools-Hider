@@ -1,0 +1,38 @@
+{
+	"manifest_version": 2,
+
+	"name": "W3Schools Hider",
+	"description": "Hides W3Schools (and other) results from Google™ Searches",
+	"version": "2.0",
+
+	"background": {
+		"scripts": ["background.js"]
+	},
+
+	"options_page": "options.html",
+
+	"page_action": {
+		"default_icon": {
+			"19": "images/icon19.png",
+			"38": "images/icon38.png"
+		}
+	},
+
+	"icons": {
+		"16": "images/icon16.png",
+		"48": "images/icon48.png"
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"include_globs": ["http://www.google.*/*", "https://www.google.*/*"],
+			"js": ["contentscripts.js"],
+			"css": ["contentstyles.css"],
+			"run_at": "document_start"
+		}
+	],
+
+    "content_security_policy": "script-src 'self' https://*.googleapis.com; object-src 'self'"
+
+}
