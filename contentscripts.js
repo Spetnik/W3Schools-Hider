@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			arDomains.push({match: "ends", domain: ".w3schools.com"});
 
 			arDomains.forEach(function(domain){
-				var basicList = document.querySelectorAll("li.g a[href*='" + domain.domain + "']"); //All links containing domain
+				var basicList = document.querySelectorAll("div.g a[href*='" + domain.domain + "']"); //All links containing domain
 				var arBasic = [];
 				for(var i = 0; i < basicList.length; i++){
 					arBasic.push(basicList[i]);
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							
 						do{
 							resultItem = resultItem != null && resultItem.parentElement != null ? resultItem.parentElement : null;
-						}while(resultItem != null && ii++ < maxI && resultItem.nodeName !=null && !(resultItem.nodeName.toLowerCase() == "li" && resultItem.classList.contains("g")));
+						}while(resultItem != null && ii++ < maxI && resultItem.nodeName !=null && !(resultItem.nodeName.toLowerCase() == "div" && resultItem.classList.contains("g")));
 
 						if(resultItem != null)
 							resultItem.remove();
