@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		if(document.querySelector('#rso') == null || document.querySelector('#rso').getAttribute("eid") == lastMutation)
 			return;
 
+		//If querystring has a tbm=isch value then it's an image search
+		if(window.location.search.replace("?","").split("&").filter(function(a){a=a.split("=");var q=a[0],v=a[1]; return q=="tbm" && v=="isch" }).length == 1)
+			return;
+
 		if(!flgAction){
 		  	chrome.extension.sendMessage({action: "showPageAction"}, function(response) {});
 			flgAction = true;
