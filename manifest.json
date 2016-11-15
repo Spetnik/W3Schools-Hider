@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "W3Schools Hider",
   "description": "Hides W3Schools (and other) results from Google™ Searches",
-  "version": "2.2",
+  "version": "2.3",
   "background": {
     "scripts": [
       "background.js"
